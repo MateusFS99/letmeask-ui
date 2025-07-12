@@ -6,9 +6,8 @@ export function useRooms() {
     queryKey: ["get-rooms"],
     queryFn: async () => {
       const response = await fetch("http://localhost:3333/rooms");
-      const result: GetRoomsResponse = await response.json();
 
-      return result;
+      return (await response.json()) as GetRoomsResponse;
     },
   });
 }

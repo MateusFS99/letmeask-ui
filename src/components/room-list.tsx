@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import type { Room } from "@/models/interfaces/room";
 
 export function RoomList() {
   const { data, isLoading } = useRooms();
@@ -28,7 +29,7 @@ export function RoomList() {
           <p className="text-muted-foreground text-sm">Carregando salas...</p>
         )}
 
-        {data?.map((room) => {
+        {data?.map((room: Room) => {
           return (
             <Link
               className="flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50"
@@ -42,6 +43,7 @@ export function RoomList() {
                   <Badge className="text-xs" variant="secondary">
                     {dayjs(room.createdAt).toNow()}
                   </Badge>
+                  
                   <Badge className="text-xs" variant="secondary">
                     {room.questionsCount} pergunta(s)
                   </Badge>
