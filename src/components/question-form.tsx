@@ -58,6 +58,7 @@ export function QuestionForm({ roomId }: QuestionFormProps) {
           Digite sua pergunta abaixo para receber uma resposta gerada por I.A.
         </CardDescription>
       </CardHeader>
+      
       <CardContent>
         <Form {...form}>
           <form
